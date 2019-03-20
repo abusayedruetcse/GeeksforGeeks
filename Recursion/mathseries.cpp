@@ -1,27 +1,19 @@
 #include<iostream>
 using namespace std;
-int sum_Series(int a,int b)
+int sum_Series(int n)
 {
-    if(b==1)
+    if(n==0)
     {
-        return a;
+        return 0;
     }
-    if(b>a)
-    {
-        sum_Series(b,a);
-    }
-    else
-    {
-       return sum_Series(a,b-1)+a;
-
-    }
+    return n+sum_Series(n-1);
 
 }
 int main()
 {
-    int a,b;
-    cin>>a>>b;
-    cout<<sum_Series(a,b);
+    int n;
+    cin>>n;
+    cout<<sum_Series(n);
 
     return 0;
 }
