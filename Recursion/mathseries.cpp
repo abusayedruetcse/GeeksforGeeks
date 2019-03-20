@@ -1,24 +1,24 @@
 #include<iostream>
 using namespace std;
-int sum_Series(int first,int pos,int n)
+int sum_Series(int n)
 {
-    if(pos==n+1)
+    if(n==1)
     {
-        return 0;
+        return 1;
     }
-    int sum=1;
-    for(int i=0;i<pos;i++)
+    int mul=1;
+    for(int i=0;i<n;i++)
     {
-        sum*=(first+i);
+        mul*=n;
     }
-    return sum+sum_Series(first+pos,pos+1,n);
+    return mul+sum_Series(n-1);
 
 }
 int main()
 {
     int n;
     cin>>n;
-    cout<<sum_Series(1,1,n);
+    cout<<sum_Series(n);
 
     return 0;
 }
